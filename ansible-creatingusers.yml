@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: Creating users
+      user:
+        name: "{{ item }}"
+        password: PassWordinSHA-512
+        state: present
+      with_items:
+        - LoginForEachUser
